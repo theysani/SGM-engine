@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="xrRender_R2"
 	ProjectGUID="{963BA4E5-499A-454D-B002-1D5ECE0527A6}"
 	RootNamespace="xrRender_R2"
@@ -147,7 +147,7 @@
 				OmitFramePointers="true"
 				EnableFiberSafeOptimizations="true"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="../../../sdk/include/stlport;../../../sdk/include/"
+				AdditionalIncludeDirectories="../../../sdk/include/stlport;../../../sdk/include/;&quot;C:\Program Files (x86)\Microsoft DirectX SDK (March 2009)\Include&quot;;&quot;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include&quot;"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;XRRENDER_R2_EXPORTS;_SECURE_SCL=0"
 				StringPooling="true"
 				ExceptionHandling="0"
@@ -181,7 +181,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="nvapi.lib atimgpud_s_x86.lib"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="..\..\..\sdk\libraries;..\..\..\..\libraries"
+				AdditionalLibraryDirectories="..\..\..\sdk\libraries;..\..\..\..\libraries;&quot;C:\Program Files (x86)\Microsoft DirectX SDK (March 2009)\Lib\x86&quot;;&quot;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OutDir)/$(ProjectName).pdb"
 				GenerateMapFile="false"

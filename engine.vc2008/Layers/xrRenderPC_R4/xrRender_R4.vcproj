@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="xrRender_R4"
 	ProjectGUID="{AC9B12ED-A2D7-4337-A981-5BD8430E96D8}"
 	RootNamespace="xrRender_R4"
@@ -144,7 +144,7 @@
 				OmitFramePointers="true"
 				EnableFiberSafeOptimizations="true"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="&quot;C:\Program Files (x86)\Microsoft DirectX SDK (March 2009)\Include&quot;;../../../sdk/include/stlport;../../../sdk/include/"
+				AdditionalIncludeDirectories="../../../sdk/include/stlport;../../../sdk/include/;&quot;C:\Program Files (x86)\Microsoft DirectX SDK (March 2009)\Include&quot;;&quot;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include&quot;"
 				PreprocessorDefinitions="USE_DX11;WIN32;NDEBUG;_WINDOWS;_USRDLL;XRRENDER_R4_EXPORTS;_SECURE_SCL=0"
 				StringPooling="true"
 				ExceptionHandling="0"
@@ -178,7 +178,7 @@
 				Name="VCLinkerTool"
 				AdditionalDependencies="dxguid.lib d3dx11.lib D3DCompiler.lib d3d11.lib dxgi.lib nvapi.lib atimgpud_s_x86.lib dxerr.lib d3d10.lib"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;C:\Program Files (x86)\Microsoft DirectX SDK (March 2009)\Lib\x86\&quot;;..\..\..\sdk\libraries;..\..\..\..\libraries;"
+				AdditionalLibraryDirectories="..\..\..\sdk\libraries;..\..\..\..\libraries;&quot;C:\Program Files (x86)\Microsoft DirectX SDK (March 2009)\Lib\x86\&quot;;&quot;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86&quot;"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile="$(OutDir)/$(ProjectName).pdb"
 				GenerateMapFile="false"
