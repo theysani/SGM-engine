@@ -224,8 +224,8 @@ float		ps_r3_dyn_wet_surf_near		= 10.f;				// 10.0f
 float		ps_r3_dyn_wet_surf_far		= 30.f;				// 30.0f
 int			ps_r3_dyn_wet_surf_sm_res	= 256;				// 256
 
-float		ps_r2_sunshafts_radius		= 1.f;				// 1.f
-float		ps_r2_sunshafts_length		= .05f;				// .05f
+float		ps_r2_sunshafts_radius		= 1.7f;				// 1.f
+float		ps_r2_sunshafts_length		= .03f;				// .05f
 float		ps_r2_sunshafts_debug_intensity= 1.f;			// 1.f
 
 
@@ -862,9 +862,9 @@ void		xrRender_initconsole	()
 	CMD4(CCC_Float,		"r2_sunshafts_radius",			&ps_r2_sunshafts_radius,	.1f,	2.f);
 	CMD4(CCC_Float,		"r2_sunshafts_length",			&ps_r2_sunshafts_length,	.01f,	0.1f);
 	CMD4(CCC_Float,		"r2_sunshafts_debug_intensity",	&ps_r2_sunshafts_debug_intensity,.0f,3.f);
-	CMD3(CCC_Mask,		"r2_sunshafts_test_hq",			&ps_r2_ls_flags,			R2FLAG_SUNSHAFTS_TEST_HQ);
-	CMD3(CCC_Mask,		"r2_sunshafts_debug_control",	&ps_r2_ls_flags,			R2FLAG_SUNSHAFTS_DEBUG_CONTROL);
-	CMD3(CCC_Mask,		"r2_sunshafts",					&ps_r2_ls_flags,			R2FLAG_SUNSHAFTS);
+	CMD3(CCC_Mask,		"r2_sunshafts_test_hq",			&ps_r2_ls_flags_ext,			R2FLAGEXT_SUNSHAFTS_TEST_HQ);
+	CMD3(CCC_Mask,		"r2_sunshafts_debug_control",	&ps_r2_ls_flags_ext,			R2FLAGEXT_SUNSHAFTS_DEBUG_CONTROL);
+	CMD3(CCC_Mask,		"r2_sunshafts",					&ps_r2_ls_flags_ext,			R2FLAGEXT_SUNSHAFTS);
 
 	//	Igor: need restart
 	CMD3(CCC_Mask,		"r2_soft_water",				&ps_r2_ls_flags,			R2FLAG_SOFT_WATER);

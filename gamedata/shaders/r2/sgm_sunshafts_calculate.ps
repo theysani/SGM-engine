@@ -16,9 +16,9 @@ float4		main		( combine_aa I )		:		COLOR
 	
 	float aspect_ratio = 1.333*screen_params0.y/screen_params0.x;
 	
-	float sun_distance = saturate(sign)*saturate(1-saturate(length(sun_screen*float2(1,aspect_ratio))sunshafts_params0.x));
+	float sun_distance = saturate(sign)*saturate(1-saturate(length(sun_vector*float2(1,aspect_ratio))*sunshafts_params0.x));
 	
-	flaot4 depth = tex2D(s_sunshafts1,texcoord);
+	float4 depth = tex2D(s_sunshafts1,texcoord);
 	float4 accum = depth;
 	sun_vector *= sunshafts_params0.y*sign;
 	
