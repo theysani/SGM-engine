@@ -1331,6 +1331,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\r2_rendertarget_phase_clear_position.cpp"
+				>
+			</File>
+			<File
 				RelativePath="r2_rendertarget_phase_combine.cpp"
 				>
 			</File>

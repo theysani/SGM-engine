@@ -195,6 +195,9 @@ public:
 	bool						u_need_CM				();
 	BOOL						u_DBT_enable			(float zMin, float zMax);
 	void						u_DBT_disable			();
+	
+	//phase clear position and normal
+	void						phase_clear_position	();
 
 	void						phase_ssao				();
 	void						phase_downsamp			();

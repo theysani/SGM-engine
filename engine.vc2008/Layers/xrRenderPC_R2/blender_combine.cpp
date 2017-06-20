@@ -67,7 +67,9 @@ void	CBlender_combine::Compile(CBlender_Compile& C)
 		C.r_Sampler_clf		("s_distort",		r2_RT_generic1);
 		C.r_End				();
 		break;
-	case 5:	// post-processing
+	case 5:	// clear position and normal
+		C.r_Pass			("null",			"sgm_clear_position",	FALSE,	FALSE,	FALSE);
+		C.r_End				();
 		break;
 	}
 }
