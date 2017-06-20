@@ -274,7 +274,7 @@
 				EnableFiberSafeOptimizations="true"
 				WholeProgramOptimization="true"
 				AdditionalIncludeDirectories="../../sdk/include/stlport;../../sdk/include/;&quot;C:\Program Files (x86)\Microsoft DirectX SDK (March 2009)\Include&quot;;&quot;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include&quot;"
-				PreprocessorDefinitions="NDEBUG,WIN32,_WINDOWS,ENGINE_BUILD;_SECURE_SCL=0"
+				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;ENGINE_BUILD;_SECURE_SCL=0;INGAME_EDITOR"
 				StringPooling="true"
 				ExceptionHandling="0"
 				RuntimeLibrary="2"
