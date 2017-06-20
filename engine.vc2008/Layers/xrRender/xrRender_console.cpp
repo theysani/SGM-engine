@@ -4,6 +4,16 @@
 #include	"xrRender_console.h"
 #include	"dxRenderDeviceRender.h"
 
+u32			ps_r2_smapsize			= 2048	;
+xr_token							q_smapsize_token						[ ]={
+	{ "smap_low",					1536										},
+		{ "smap_medium",			2048										},
+			{ "smap_high",			2560										},
+				{ "smap_ultra",		3072										},
+					{ "smap_extreme",4096										},
+						{ 0,		0											}
+};
+
 u32			ps_Preset				=	2	;
 xr_token							qpreset_token							[ ]={
 	{ "Minimum",					0											},
@@ -868,6 +878,7 @@ void		xrRender_initconsole	()
 	CMD3(CCC_Mask,		"r2_sunshafts",					&ps_r2_ls_flags,			R2FLAG_SUNSHAFTS);
 	CMD4(CCC_Float,		"r2_rain_drops_debug_intensity",	&ps_r2_rain_rops_debug_control,	0.f,	3.f);
 	CMD3(CCC_Mask,		"r2_rain_drops",				&ps_r2_ls_flags,			R2FLAG_RAIN_DROPS);
+	CMD3(CCC_Token,		"r2_shadow_map_size",			&ps_r2_smapsize,			q_smapsize_token);
 
 	//	Igor: need restart
 	CMD3(CCC_Mask,		"r2_soft_water",				&ps_r2_ls_flags,			R2FLAG_SOFT_WATER);

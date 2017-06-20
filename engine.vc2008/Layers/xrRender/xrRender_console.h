@@ -3,6 +3,9 @@
 #pragma once
 
 // Common
+extern ECORE_API	u32			ps_r2_smapsize;	//=	2048;
+extern ECORE_API	xr_token	q_smapsize_token[];
+
 extern ECORE_API	u32			ps_r_sun_shafts;	//=	0;
 extern ECORE_API	xr_token	qsun_shafts_token[];
 
