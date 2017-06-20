@@ -294,8 +294,8 @@ void CEnvDescriptor::load	(CEnvironment& environment, CInifile& config)
 	bolt_duration			= (tb_id.size())?config.r_float	(m_identifier.c_str(),"thunderbolt_duration"):0.f;
 	env_ambient				= config.line_exist(m_identifier.c_str(),"ambient")?environment.AppendEnvAmb	(config.r_string(m_identifier.c_str(),"ambient")):0;
 
-	if (config.line_exist(m_identifier.c_str(),"sun_shafts_intensity"))
-		m_fSunShaftsIntensity = config.r_float(m_identifier.c_str(),"sun_shafts_intensity");
+	if (config.line_exist(m_identifier.c_str(),"sgm_sunshafts_intensity"))
+		m_fSunShaftsIntensity = config.r_float(m_identifier.c_str(),"sgm_sunshafts_intensity");
 
 	if (config.line_exist(m_identifier.c_str(),"water_intensity"))
 		m_fWaterIntensity = config.r_float(m_identifier.c_str(),"water_intensity");
