@@ -229,8 +229,8 @@ void	CRenderTarget::phase_combine	()
 	
 	if ( !_menu_pp ) 
 	{
-		/*if ( RImplementation.o.advancedpp && ps_r2_ls_flags_ext.test(R2FLAGEXT_SUNSHAFTS))*/ phase_sunshafts	();
-		phase_rain_drops	();
+		if ( ps_r2_ls_flags.test(R2FLAG_SUNSHAFTS)) phase_sunshafts	();
+		if ( ps_r2_ls_flags.test(R2FLAG_RAIN_DROPS)) phase_rain_drops();
 	}
 
 	// Combine everything + perform AA

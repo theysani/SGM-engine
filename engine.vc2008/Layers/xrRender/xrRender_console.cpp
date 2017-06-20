@@ -863,10 +863,11 @@ void		xrRender_initconsole	()
 	CMD4(CCC_Float,		"r2_sunshafts_radius",			&ps_r2_sunshafts_radius,	.1f,	2.f);
 	CMD4(CCC_Float,		"r2_sunshafts_length",			&ps_r2_sunshafts_length,	.01f,	0.1f);
 	CMD4(CCC_Float,		"r2_sunshafts_debug_intensity",	&ps_r2_sunshafts_debug_intensity,.0f,3.f);
-	CMD3(CCC_Mask,		"r2_sunshafts_test_hq",			&ps_r2_ls_flags_ext,			R2FLAGEXT_SUNSHAFTS_TEST_HQ);
-	CMD3(CCC_Mask,		"r2_sunshafts_debug_control",	&ps_r2_ls_flags_ext,			R2FLAGEXT_SUNSHAFTS_DEBUG_CONTROL);
-	CMD3(CCC_Mask,		"r2_sunshafts",					&ps_r2_ls_flags_ext,			R2FLAGEXT_SUNSHAFTS);
-	CMD4(CCC_Float,		"r2_rain_drops_debug_control",	&ps_r2_rain_rops_debug_control,	0.f,	3.f);
+	//CMD3(CCC_Mask,		"r2_sunshafts_test_hq",			&ps_r2_ls_flags_ext,			R2FLAGEXT_SUNSHAFTS_TEST_HQ);
+	//CMD3(CCC_Mask,		"r2_sunshafts_debug_control",	&ps_r2_ls_flags_ext,			R2FLAGEXT_SUNSHAFTS_DEBUG_CONTROL);
+	CMD3(CCC_Mask,		"r2_sunshafts",					&ps_r2_ls_flags,			R2FLAG_SUNSHAFTS);
+	CMD4(CCC_Float,		"r2_rain_drops_debug_intensity",	&ps_r2_rain_rops_debug_control,	0.f,	3.f);
+	CMD3(CCC_Mask,		"r2_rain_drops",				&ps_r2_ls_flags,			R2FLAG_RAIN_DROPS);
 
 	//	Igor: need restart
 	CMD3(CCC_Mask,		"r2_soft_water",				&ps_r2_ls_flags,			R2FLAG_SOFT_WATER);

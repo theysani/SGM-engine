@@ -9,9 +9,10 @@ void	CRenderTarget::phase_clear_position	()
 	if ( RImplementation.o.advancedpp &&
 			(
 				ps_r2_ls_flags.test(R2FLAG_SOFT_PARTICLES|R2FLAG_DOF) ||
-				ps_r2_ls_flags_ext.test(R2FLAGEXT_SUNSHAFTS) ||
+				//ps_r2_ls_flags_ext.test(R2FLAGEXT_SUNSHAFTS) ||
 				(ps_r_ssao>0)
 			)
+		 || ps_r2_ls_flags.test(R2FLAG_SUNSHAFTS)	
 		)
 	{
 		u_setrt	( Device.dwWidth,Device.dwHeight,rt_Position->pRT,NULL,NULL,HW.pBaseZB );

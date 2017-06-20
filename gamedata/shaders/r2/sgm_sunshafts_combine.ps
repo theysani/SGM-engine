@@ -1,5 +1,6 @@
 #include "common.h"
 
+//#define USE_SUNSHAFTS_DEBUG_CONTROL//DEBUG
 //////////////////////////////////////////////////////////////////////////////////////////
 //pixel
 float4		main		( combine_aa I )		:		COLOR
@@ -13,11 +14,11 @@ float4		main		( combine_aa I )		:		COLOR
 	//float4 sun_color = float4(1,1,1,1);
 	//sun_color.xyz = normalize(L_sun_color);
 	
-	#ifdef SUNSHAFTS_DEBUG_CONTROL
+	#ifdef USE_SUNSHAFTS_DEBUG_CONTROL
 	float4 out_color = scene + sunshafts.xyzz*sunshafts_params1.y*float4(L_sun_color,1.f)*(1.f - scene);
 	//float4 out_color = scene + sunshafts.xyzz * sunshafts_params1.x * sun_color * (1 - scene);
-	#else//SUNSHAFTS_DEBUG_CONTROL
+	#else//USE_SUNSHAFTS_DEBUG_CONTROL
 	float4 out_color = scene + sunshafts.xyzz*sunshafts_params1.x*float4(L_sun_color,1.f)*(1.f - scene);
-	#endif//SUNSHAFTS_DEBUG_CONTROL
+	#endif//USE_SUNSHAFTS_DEBUG_CONTROL
 	return out_color;
 }

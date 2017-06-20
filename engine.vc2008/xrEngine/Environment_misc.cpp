@@ -233,6 +233,7 @@ CEnvDescriptor::CEnvDescriptor	(shared_str const& identifier) :
 
 	m_fSunShaftsIntensity = 1;
 	m_fWaterIntensity = 1;
+	m_fRainDropsIntensity = 0;
 
     lens_flare_id		= "";
 	tb_id				= "";
@@ -299,6 +300,9 @@ void CEnvDescriptor::load	(CEnvironment& environment, CInifile& config)
 
 	if (config.line_exist(m_identifier.c_str(),"water_intensity"))
 		m_fWaterIntensity = config.r_float(m_identifier.c_str(),"water_intensity");
+	
+	if (config.line_exist(m_identifier.c_str(),"sgm_rain_drops_intensity"))
+		m_fRainDropsIntensity = config.r_float(m_identifier.c_str(),"sgm_rain_drops_intensity");	
 
 	C_CHECK					(clouds_color);
 	C_CHECK					(sky_color	);
@@ -445,6 +449,7 @@ void CEnvDescriptorMixer::lerp	(CEnvironment* , CEnvDescriptor& A, CEnvDescripto
 
 	m_fSunShaftsIntensity	=	fi*A.m_fSunShaftsIntensity + f*B.m_fSunShaftsIntensity;
 	m_fWaterIntensity		=	fi*A.m_fWaterIntensity + f*B.m_fWaterIntensity;
+	m_fRainDropsIntensity	=	fi*A.m_fRainDropsIntensity + f*B.m_fRainDropsIntensity;
 
 	// colors
 //.	sky_color.lerp			(A.sky_color,B.sky_color,f).add(Mdf.sky_color).mul(modif_power);

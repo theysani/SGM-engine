@@ -3,6 +3,11 @@
 
 #include "sgm_shaders_config.h"//sgm configuration file
 
+#ifdef I_AM_DEVELOPER//developer mode
+#	define USE_RAIN_DROPS_DEBUG_CONTROL
+#	define USE_SUNSHAFTS_DEBUG_CONTROL
+#endif//I_AM_DEVELOPER
+
 //////////////////////////////////////////////////////////////////////////////////////////
 //structs
 struct		combine_aa		{//combine anti-aliasing struct

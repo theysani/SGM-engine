@@ -900,7 +900,7 @@ HRESULT	CRender::shader_compile			(
 	{
 		sh_name[len]='0'; ++len;
 	}
-	
+	/*
 	if (RImplementation.o.advancedpp && ps_r2_ls_flags_ext.test(R2FLAGEXT_SUNSHAFTS_TEST_HQ))
 	{
 		defines[def_it].Name		=	"HIGH_QUALITY_TEST";
@@ -924,7 +924,8 @@ HRESULT	CRender::shader_compile			(
 	{
 		sh_name[len]='0'; ++len;
 	}	
-/*
+	*/
+	/*
 	if (RImplementation.o.advancedpp && ps_r_sun_shafts)
 	{
 		xr_sprintf					(c_sun_shafts,"%d",ps_r_sun_shafts);
@@ -937,7 +938,7 @@ HRESULT	CRender::shader_compile			(
 	{
 		sh_name[len]='0'; ++len;
 	}
-*/
+	*/
 	if (RImplementation.o.advancedpp && ps_r_ssao)
 	{
 		xr_sprintf					(c_ssao,"%d",ps_r_ssao);
