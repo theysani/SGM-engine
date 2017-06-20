@@ -15,6 +15,11 @@ struct		combine_aa		{//combine anti-aliasing struct
 	float4		tc6		:		TEXCOORD6;
 };
 
+struct		clear_position_out		{
+	float4		position		:		COLOR0;
+	float4		normal		:		COLOR1;
+};
+
 //////////////////////////////////////////////////////////////////////////////////////////
 //defines
 	#define		cFARPLANE		float(100)//COP standart

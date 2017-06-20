@@ -1,0 +1,11 @@
+#include "common.h"
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//pixel
+clear_position_out		main		( combine_aa I )
+{
+	clear_position_out O;
+	O.position = float4(0.f,0.f,10000.f,0.f);
+	O.normal = flaot4(0.f,0.f,0.f,0.f);
+	return O;
+}
