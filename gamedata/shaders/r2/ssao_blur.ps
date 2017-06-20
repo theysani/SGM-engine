@@ -1,4 +1,4 @@
-uniform	float4		screen_res;
+//uniform	float4		screen_params0;
 uniform	sampler2D	s_occ;
 
 
@@ -21,7 +21,7 @@ half ssao_blur_ps(half2 centerTC)
 
   for(int i=0; i<4; i++)
   {
-     float2 sampleTC   = centerTC + screen_res.zw * arrOffsets[i];
+     float2 sampleTC   = centerTC + screen_params0.zw * arrOffsets[i];
      float2 sampleData = tex2D(s_occ, sampleTC);
 	 
 	 float fDepth  = sampleData.g;

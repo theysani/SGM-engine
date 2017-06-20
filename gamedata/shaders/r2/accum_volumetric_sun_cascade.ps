@@ -26,7 +26,7 @@
 
 half4	volume_range;	//	x - near plane, y - far plane
 half4	sun_shafts_intensity;
-uniform	float4		screen_res;
+//uniform	float4		screen_params0;
 //#ifdef	USE_BRANCHING
 //	"If" in loop
 float4 	main (float4 tc : TEXCOORD0, float4 tcJ : TEXCOORD1 ) : COLOR
@@ -43,7 +43,7 @@ float4 	main (float4 tc : TEXCOORD0, float4 tcJ : TEXCOORD1 ) : COLOR
 	half3	direction = P/RAY_SAMPLES;
 #else	//	JITTER_SUN_SHAFTS
 //	Variable ray length, variable step dencity, use jittering
-	half4	J0 	= tex2D		(jitter0,float4(screen_res.x/JITTER_TEXTURE_SIZE*tc.xy/tc.w,0,0));//tcJ);
+	half4	J0 	= tex2D		(jitter0,float4(screen_params0.x/JITTER_TEXTURE_SIZE*tc.xy/tc.w,0,0));//tcJ);
 	half	coeff = (RAY_SAMPLES - 1*J0.x)/(RAY_SAMPLES*RAY_SAMPLES);		
 	half3	direction = P*coeff;
 //	half3	direction = P/(RAY_SAMPLES+(J0.x*4-2));

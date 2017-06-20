@@ -358,7 +358,7 @@ void	CBlender_Compile::SetMapping	()
 	r_Constant				("L_hemi_color",	&binder_hemi_color);
 	r_Constant				("L_ambient",		&binder_amb_color);
 #endif
-	r_Constant				("screen_res",		&binder_screen_res);
+	r_Constant				("screen_params0",		&binder_screen_res);
 
 	// detail
 	//if (bDetail	&& detail_scaler)

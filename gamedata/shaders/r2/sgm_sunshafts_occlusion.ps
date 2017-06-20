@@ -1,0 +1,32 @@
+#include "common.h"
+
+//#define HIGH_QUALITY_TEST//verification required
+//////////////////////////////////////////////////////////////////////////////////////////
+//pixel
+float4		main		( combine_aa I )		:		COLOR
+{
+	float4 scene = float4(0,0,0,0);
+	float scene_depth = 0;
+	#ifdef HIGH_QUALITY_TEST
+	float scene_depth0 = tex2D(s_position,I.tc0).z;
+	float scene_depth1 = tex2D(s_position,I.tc1).z;
+	float scene_depth2 = tex2D(s_position,I.tc2).z;
+	float scene_depth3 = tex2D(s_position,I.tc3).z;
+	float scene_depth4 = tex2D(s_position,I.tc4).z;
+	scene_depth = (scene_depth0+scene_depth1+scene_depth2+scene_depth3+scene_depth4)*.2f;
+	
+	float4 scene0 = tex2D(s_image,I.tc0);
+	float4 scene1 = tex2D(s_image,I.tc1);
+	float4 scene2 = tex2D(s_image,I.tc2);
+	float4 scene3 = tex2D(s_image,I.tc3);
+	float4 scene4 = tex2D(s_image,I.tc4);
+	scene = (scene0+scene1+scene2+scene3+scene4)*.2f;
+	#else//HIGH_QUALITY_TEST
+	scene_depth = tex2D(s_position,I.tc0).z;
+	scene = tex2D(s_image,I.tc0);
+	#endif//HIGH_QUALITY_TEST
+	float normalize_scene_depth = normalize_depth(scene_depth);
+	
+	float4 out_color = float4(scene.xyz*(1 - normalize_scene_depth*1000),normalize_scene_depth);
+	return out_color;
+}

@@ -1,6 +1,7 @@
 #ifndef        COMMON_H
 #define        COMMON_H
 
+#include "sgm_common.h"
 // #define USE_SUPER_SPECULAR
 
 #include "shared\common.h"
@@ -229,16 +230,16 @@ uniform sampler2D       s_tonemap;              // actually MidleGray / exp(Lw +
 //////////////////////////////////////////////////////////////////////////////////////////
 // Defines                                		//
 #define def_gloss       half(2.f /255.f)
-#define def_aref        half(200.f/255.f)
+#define def_aref        float(200.f/255.f)
 #define def_dbumph      half(0.333f)
 #define def_virtualh    half(0.05f)              // 5cm
-#define def_distort     half(0.05f)             // we get -0.5 .. 0.5 range, this is -512 .. 512 for 1024, so scale it
-#define def_hdr         half(9.h)         		// hight luminance range half(3.h)
+#define def_distort     float(0.05f)             // we get -0.5 .. 0.5 range, this is -512 .. 512 for 1024, so scale it
+#define def_hdr         float(9.h)         		// hight luminance range half(3.h)
 #define def_hdr_clip	half(0.75h)        		//
 
 //////////////////////////////////////////////////////////////////////////////////////////
-#define	LUMINANCE_VECTOR                 half3(0.3f, 0.38f, 0.22f)
-void        tonemap              (out half4 low, out half4 high, half3 rgb, half scale)
+#define	LUMINANCE_VECTOR                 float3(0.3f, 0.38f, 0.22f)
+void        tonemap              (out float4 low, out float4 high, float3 rgb, float scale)
 {
         rgb     =      	rgb*scale       ;
 
@@ -252,8 +253,8 @@ void        tonemap              (out half4 low, out half4 high, half3 rgb, half
 
         high	=		low/def_hdr		;        // 8x dynamic range
 #else
-        low		=       half4           ( ( (rgb*(1+rgb/fWhiteIntensitySQR)) / (rgb+1) ),           0 )	;
-        high	=       half4       	(rgb/def_hdr,   0 )	;		// 8x dynamic range
+        low		=       float4           ( ( (rgb*(1+rgb/fWhiteIntensitySQR)) / (rgb+1) ),           0 )	;
+        high	=       float4       	(rgb/def_hdr,   0 )	;		// 8x dynamic range
 #endif
 
 /*
@@ -267,8 +268,8 @@ void        tonemap              (out half4 low, out half4 high, half3 rgb, half
 //		rgb		/=	def_hdr	;
 //		high	= 	half4	(rgb, dot(rgb,0.333f)-def_hdr_clip)		;
 }
-half4		combine_bloom        (half3  low, half4 high)	{
-        return        half4(low + high*high.a, 1.h);
+float4		combine_bloom        (float3  low, float4 high)	{
+        return        float4(low + high*high.a, 1.h);
 }
 
 float3	v_hemi        	(float3 n)                        	{        return L_hemi_color*(.5f + .5f*n.y);                   }

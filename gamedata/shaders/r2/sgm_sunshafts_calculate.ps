@@ -1,0 +1,37 @@
+#include "common.h"
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//pixel
+float4		main		( combine_aa I )		:		COLOR
+{
+	float2 texcoord = I.tc0;
+	//calculate the position of the sun in the screen space
+	float sun_farplane = cFARPLANE/(sqrt(1 - L_sun_dir_w.y*L_sun_dir_w.y));
+	float4 sun_projected = mul(m_VP,float4(sun_farplane*L_sun_dir_w + eye_position,1.f));
+	float4 sun_screen = convert_to_screen_space(sun_projected)/sun_projected.w;
+	
+	float2 sun_vector = (sun_screen.xy-texcoord);
+	
+	float sign = dot(-eye_direction,normalize(L_sun_dir_w));
+	
+	float aspect_ratio = 1.333*screen_params0.y/screen_params0.x;
+	
+	float sun_distance = saturate(sign)*saturate(1-saturate(length(sun_screen*float2(1,aspect_ratio))sunshafts_params0.x));
+	
+	flaot4 depth = tex2D(s_sunshafts1,texcoord);
+	float4 accum = depth;
+	sun_vector *= sunshafts_params0.y*sign;
+	
+	for (int i = 0; i < SUNSHAFTS_SAMPLES; i++){
+		texcoord += sun_vector;
+		depth = tex2D(s_sunshafts1,texcoord);
+		accum += depth*(1-i/SUNSHAFTS_SAMPLES);
+	}
+	
+	accum /= SUNSHAFTS_SAMPLES;//divide by sample count
+	
+	float4 out_color = accum*2*float4(sun_distance,sun_distance,sun_distance,1.f);
+	out_color.w += 1 - saturate(0.5-0.5*sign);
+	
+	return out_color;
+}

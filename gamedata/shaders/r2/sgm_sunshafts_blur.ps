@@ -1,0 +1,19 @@
+#include "common.h"
+#include "sgm_gauss.h"//gaussian blur
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//pixel
+float4		main		( combine_aa I )		:		COLOR
+{
+	float4 out_color = float4(0,0,0,0);
+	#ifdef USE_SUNSHAFTS_BLUR
+	for (int i = 0; i < SUNSHAFTS_BLUR_SAMPLES; i++)
+	{
+		out_color += gauss(s_sunshafts0,texcoord,i,true);
+	}
+	out_color /= SUNSHAFTS_BLUR_SAMPLES;
+	#else//USE_SUNSHAFTS_BLUR
+	out_color = tex2D(s_sunshafts0,texcoord);
+	#endif//USE_SUNSHAFTS_BLUR
+	return out_color;
+}
