@@ -8,8 +8,8 @@ float4 calc_hbao(float z, float4 curN, float2 tc0)
 
 #else	//	SSAO_QUALITY
 
-#define g_Resolution 	screen_res.xy
-#define g_InvResolution screen_res.zw
+#define g_Resolution 	screen_params0.xy
+#define g_InvResolution screen_params0.zw
 
 static const float g_MaxFootprintUV=0.01f;
 

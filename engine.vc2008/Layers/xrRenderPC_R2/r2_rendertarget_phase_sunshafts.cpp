@@ -117,7 +117,7 @@ void	CRenderTarget::phase_sunshafts	()
 	RCache.Vertex.Unlock		(4,g_aa_AA->vb_stride);
 	
 	// Draw COLOR
-	RCache.set_Element			(s_sunshafts->E[2]);
+	RCache.set_Element			(s_sunshafts->E[3]);
 	RCache.set_c				("sunshafts_params1",envdesc.m_fSunShaftsIntensity,ps_r2_sunshafts_debug_intensity,0,0);
 	RCache.set_Geometry			(g_aa_AA);
 	RCache.Render				(D3DPT_TRIANGLELIST,Offset,0,4,0,2);		

@@ -5,6 +5,7 @@
 //pixel
 float4		main		( combine_aa I )		:		COLOR
 {
+	float2 texcoord = I.tc0;
 	float4 out_color = float4(0,0,0,0);
 	#ifdef USE_SUNSHAFTS_BLUR
 	for (int i = 0; i < SUNSHAFTS_BLUR_SAMPLES; i++)

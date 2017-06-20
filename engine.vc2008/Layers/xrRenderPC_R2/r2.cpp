@@ -901,7 +901,6 @@ HRESULT	CRender::shader_compile			(
 		sh_name[len]='0'; ++len;
 	}
 	
-	if (RImplementation.o.advancedpp && ps_r2_ls_flags.test(R2FLAG_SUNSHAFTS_TEST_HQ))
 	{
 		defines[def_it].Name		=	"HIGH_QUALITY_TEST";
 		defines[def_it].Definition	=	"1";
@@ -913,7 +912,6 @@ HRESULT	CRender::shader_compile			(
 		sh_name[len]='0'; ++len;
 	}
 	
-	if (RImplementation.o.advancedpp && ps_r2_ls_flags.test(R2FLAG_SUNSHAFTS_DEBUG_CONTROL))
 	{
 		defines[def_it].Name		=	"SUNSHAFTS_DEBUG_CONTROL";
 		defines[def_it].Definition	=	"1";

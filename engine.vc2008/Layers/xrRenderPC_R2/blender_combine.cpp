@@ -15,7 +15,9 @@ void	CBlender_combine::Compile(CBlender_Compile& C)
 	case 0:	// combine
 		C.r_Pass			("combine_1",		"combine_1",		FALSE,	FALSE,	FALSE, TRUE, D3DBLEND_INVSRCALPHA, D3DBLEND_SRCALPHA);	//. MRT-blend?
 		C.r_Sampler_rtf		("s_position",		r2_RT_P				);
+		//C.r_Sampler_rtf		("s_position_update",		r2_RT_PUpdate				);
 		C.r_Sampler_rtf		("s_normal",		r2_RT_N				);
+		//C.r_Sampler_rtf		("s_normal_update",		r2_RT_NUpdate				);
 		C.r_Sampler_rtf		("s_diffuse",		r2_RT_albedo		);
 		C.r_Sampler_rtf		("s_accumulator",	r2_RT_accum			);
 		C.r_Sampler_rtf		("s_depth",			r2_RT_depth			);
@@ -33,7 +35,9 @@ void	CBlender_combine::Compile(CBlender_Compile& C)
 	case 1:	// aa-edge-detection + AA :)
 		C.r_Pass			("null",			"combine_2_AA",		FALSE,	FALSE,	FALSE);
 		C.r_Sampler_rtf		("s_position",		r2_RT_P);
+		//C.r_Sampler_rtf		("s_position_update",		r2_RT_PUpdate				);
 		C.r_Sampler_rtf		("s_normal",		r2_RT_N);
+		//C.r_Sampler_rtf		("s_normal_update",		r2_RT_NUpdate				);
 		C.r_Sampler_clf		("s_image",			r2_RT_generic0);
 		C.r_Sampler_clf		("s_bloom",			r2_RT_bloom1);
 		C.r_Sampler_clf		("s_distort",		r2_RT_generic1);
@@ -43,6 +47,7 @@ void	CBlender_combine::Compile(CBlender_Compile& C)
 	case 2:	// non-AA
 		C.r_Pass			("null",			"combine_2_NAA",	FALSE,	FALSE,	FALSE);
 		C.r_Sampler_rtf		("s_position",		r2_RT_P);
+		//C.r_Sampler_rtf		("s_position_update",		r2_RT_PUpdate				);
 		C.r_Sampler_rtf		("s_normal",		r2_RT_N);
 		C.r_Sampler_clf		("s_image",			r2_RT_generic0);
 		C.r_Sampler_clf		("s_bloom",			r2_RT_bloom1);
@@ -52,7 +57,9 @@ void	CBlender_combine::Compile(CBlender_Compile& C)
 	case 3:	// aa-edge-detection + AA :) + DISTORTION
 		C.r_Pass			("null",			"combine_2_AA_D",	FALSE,	FALSE,	FALSE);
 		C.r_Sampler_rtf		("s_position",		r2_RT_P);
+		//C.r_Sampler_rtf		("s_position_update",		r2_RT_PUpdate				);
 		C.r_Sampler_rtf		("s_normal",		r2_RT_N);
+		//C.r_Sampler_rtf		("s_normal_update",		r2_RT_NUpdate				);
 		C.r_Sampler_clf		("s_image",			r2_RT_generic0);
 		C.r_Sampler_clf		("s_bloom",			r2_RT_bloom1);
 		C.r_Sampler_clf		("s_distort",		r2_RT_generic1);
@@ -61,7 +68,9 @@ void	CBlender_combine::Compile(CBlender_Compile& C)
 	case 4:	// non-AA + DISTORTION
 		C.r_Pass			("null",			"combine_2_NAA_D",	FALSE,	FALSE,	FALSE);
 		C.r_Sampler_rtf		("s_position",		r2_RT_P);
+		//C.r_Sampler_rtf		("s_position_update",		r2_RT_PUpdate				);
 		C.r_Sampler_rtf		("s_normal",		r2_RT_N);
+		//C.r_Sampler_rtf		("s_normal_update",		r2_RT_NUpdate				);
 		C.r_Sampler_clf		("s_image",			r2_RT_generic0);
 		C.r_Sampler_clf		("s_bloom",			r2_RT_bloom1);
 		C.r_Sampler_clf		("s_distort",		r2_RT_generic1);

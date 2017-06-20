@@ -217,7 +217,9 @@ CRenderTarget::CRenderTarget		()
 	{
 		u32		w=Device.dwWidth, h=Device.dwHeight;
 		rt_Position.create			(r2_RT_P,		w,h,D3DFMT_A16B16G16R16F);
+		//rt_PositionUpdate.create			(r2_RT_PUpdate,		w,h,D3DFMT_A16B16G16R16F);
 		rt_Normal.create			(r2_RT_N,		w,h,D3DFMT_A16B16G16R16F);
+		//rt_NormalUpdate.create			(r2_RT_NUpdate,		w,h,D3DFMT_A16B16G16R16F);
 
 		// select albedo & accum
 		if (RImplementation.o.mrtmixdepth)	
