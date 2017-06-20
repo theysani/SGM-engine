@@ -674,7 +674,7 @@ HRESULT	CRender::shader_compile			(
 	int								def_it			= 0;
 	char							c_smapsize		[32];
 	char							c_gloss			[32];
-	char							c_sun_shafts	[32];
+//	char							c_sun_shafts	[32];
 	char							c_ssao			[32];
 	char							c_sun_quality	[32];
 
@@ -900,7 +900,31 @@ HRESULT	CRender::shader_compile			(
 	{
 		sh_name[len]='0'; ++len;
 	}
-
+	
+	if (RImplementation.o.advancedpp && ps_r2_ls_flags.test(R2FLAG_SUNSHAFTS_TEST_HQ))
+	{
+		defines[def_it].Name		=	"HIGH_QUALITY_TEST";
+		defines[def_it].Definition	=	"1";
+		def_it						++;
+		sh_name[len]='1'; ++len;
+	}
+	else
+	{
+		sh_name[len]='0'; ++len;
+	}
+	
+	if (RImplementation.o.advancedpp && ps_r2_ls_flags.test(R2FLAG_SUNSHAFTS_DEBUG_CONTROL))
+	{
+		defines[def_it].Name		=	"SUNSHAFTS_DEBUG_CONTROL";
+		defines[def_it].Definition	=	"1";
+		def_it						++;
+		sh_name[len]='1'; ++len;
+	}
+	else
+	{
+		sh_name[len]='0'; ++len;
+	}	
+/*
 	if (RImplementation.o.advancedpp && ps_r_sun_shafts)
 	{
 		xr_sprintf					(c_sun_shafts,"%d",ps_r_sun_shafts);
@@ -913,7 +937,7 @@ HRESULT	CRender::shader_compile			(
 	{
 		sh_name[len]='0'; ++len;
 	}
-
+*/
 	if (RImplementation.o.advancedpp && ps_r_ssao)
 	{
 		xr_sprintf					(c_ssao,"%d",ps_r_ssao);

@@ -226,6 +226,11 @@ void	CRenderTarget::phase_combine	()
 	//	Render to RT texture to be able to copy RT even in windowed mode.
 	BOOL	PP_Complex		= u_need_PP	() | (BOOL)RImplementation.m_bMakeAsyncSS;
 	if (_menu_pp)			PP_Complex	= FALSE;
+	
+	if ( !_menu_pp ) 
+	{
+		if ( RImplementation.o.advancedpp && ps_r2_ls_flags.test(R2FLAG_SUNSHAFTS)) phase_sunshafts	();
+	}
 
 	// Combine everything + perform AA
 	if		(PP_Complex)	u_setrt		( rt_Color,0,0,HW.pBaseZB );			// LDR RT

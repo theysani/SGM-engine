@@ -134,6 +134,10 @@ extern ECORE_API float			ps_r3_dyn_wet_surf_near;	// 10.0f
 extern ECORE_API float			ps_r3_dyn_wet_surf_far;		// 30.0f
 extern ECORE_API int			ps_r3_dyn_wet_surf_sm_res;	// 256
 
+extern ECORE_API float			ps_r2_sunshafts_radius;		// 
+extern ECORE_API float			ps_r2_sunshafts_length;		// 
+extern ECORE_API float			ps_r2_sunshafts_debug_intensity;// 
+
 enum
 {
 	R2FLAG_SUN					= (1<<0),
@@ -179,6 +183,10 @@ enum
 	R3FLAG_GBUFFER_OPT			= (1<<30),
 	R3FLAG_USE_DX10_1			= (1<<31),
 	//R3FLAG_MSAA_ALPHATEST		= (1<<31),
+	
+	R2FLAG_SUNSHAFTS_TEST_HQ	= (1<<32),
+	R2FLAG_SUNSHAFTS_DEBUG_CONTROL= (1<<33),
+	R2FLAG_SUNSHAFTS			= (1<<34),
 };
 
 enum
