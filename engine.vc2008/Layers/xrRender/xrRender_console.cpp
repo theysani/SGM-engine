@@ -227,6 +227,7 @@ int			ps_r3_dyn_wet_surf_sm_res	= 256;				// 256
 float		ps_r2_sunshafts_radius		= 1.7f;				// 1.f
 float		ps_r2_sunshafts_length		= .03f;				// .05f
 float		ps_r2_sunshafts_debug_intensity= 1.f;			// 1.f
+float		ps_r2_rain_rops_debug_control= 1.f;				// 1.f
 
 
 //- Mad Max
@@ -865,6 +866,7 @@ void		xrRender_initconsole	()
 	CMD3(CCC_Mask,		"r2_sunshafts_test_hq",			&ps_r2_ls_flags_ext,			R2FLAGEXT_SUNSHAFTS_TEST_HQ);
 	CMD3(CCC_Mask,		"r2_sunshafts_debug_control",	&ps_r2_ls_flags_ext,			R2FLAGEXT_SUNSHAFTS_DEBUG_CONTROL);
 	CMD3(CCC_Mask,		"r2_sunshafts",					&ps_r2_ls_flags_ext,			R2FLAGEXT_SUNSHAFTS);
+	CMD4(CCC_Float,		"r2_rain_drops_debug_control",	&ps_r2_rain_rops_debug_control,	0.f,	3.f);
 
 	//	Igor: need restart
 	CMD3(CCC_Mask,		"r2_soft_water",				&ps_r2_ls_flags,			R2FLAG_SOFT_WATER);

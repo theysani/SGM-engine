@@ -231,7 +231,7 @@ CEnvDescriptor::CEnvDescriptor	(shared_str const& identifier) :
 	sun_color.set		(1,1,1);
 	sun_dir.set			(0,-1,0);
 
-	m_fSunShaftsIntensity = 0;
+	m_fSunShaftsIntensity = 1;
 	m_fWaterIntensity = 1;
 
     lens_flare_id		= "";

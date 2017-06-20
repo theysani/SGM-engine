@@ -28,6 +28,7 @@ struct		clear_position_out		{
 //uniforms
 	uniform		float2			sunshafts_params0;//x-radius,y-length
 	uniform		float2			sunshafts_params1;//x-weather control,y-debug intensity
+	uniform 	float2 			rain_drops_params0;//x-weather control,y-debug intensity
 	uniform		float4			screen_params0;//x-RDEVICE.dwWidth,y-RDEVICE.dwHeigh,z-1.f/x,w-1.f/y
 	
 //////////////////////////////////////////////////////////////////////////////////////////	
@@ -35,6 +36,7 @@ struct		clear_position_out		{
 	uniform		sampler2D		s_sunshafts0;//sunshafts occlusion mask
 	uniform		sampler2D		s_sunshafts1;//mask blurring
 	uniform		sampler2D		s_sunshafts2;//calculate sunshafts
+	uniform		sampler2D		s_rain_drops0;//rain drops du/dv map
 	
 //////////////////////////////////////////////////////////////////////////////////////////
 //functions

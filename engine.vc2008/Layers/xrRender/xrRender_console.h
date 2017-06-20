@@ -137,6 +137,7 @@ extern ECORE_API int			ps_r3_dyn_wet_surf_sm_res;	// 256
 extern ECORE_API float			ps_r2_sunshafts_radius;		// 
 extern ECORE_API float			ps_r2_sunshafts_length;		// 
 extern ECORE_API float			ps_r2_sunshafts_debug_intensity;// 
+extern ECORE_API float			ps_r2_rain_rops_debug_control;// 
 
 enum
 {
